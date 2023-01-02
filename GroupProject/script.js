@@ -1,9 +1,9 @@
 function createTable(data){
     let table = document.getElementById("tab");
-    
+
     for (let i = 0; i<data.length; i++){
         let row = document.createElement("tr");
-        
+
         for(x in data[i]) {
             let value = document.createElement("td");
             let textValue = document.createTextNode(data[i][x]);
@@ -16,7 +16,7 @@ function createTable(data){
 
 function heading(data){
     let header = document.getElementById("header");
-    
+
     for(name in data[0]) { //name = nazwa kolumny 
         let node = document.createElement("th");
         let textnode = document.createTextNode(name);
@@ -33,13 +33,13 @@ function onlyUnique(value, index, self){    //funkcja zwracajaca nowe tabele w k
 function graphElement(data, element){//funkcja zwraca tablice 2d z wartoscia kolumny i iloscia jej wystepowan
     var results = [];    //element - kolumna z ktorej bedziemy pobierac dane
     var elements = [];
-    
+
     for (let i = 0; i<data.length; i++){
         elements.push(data[i][element]);
     }
     var unique = elements.filter(onlyUnique); //unikalne wartosci w kolumnie
     var count = [];
-    
+
     for (let i = 0; i<unique.length; i++){ //zliczanie wartosci
         var counter = 0;
         for (let j = 0; j<elements.length; j++){
@@ -49,7 +49,7 @@ function graphElement(data, element){//funkcja zwraca tablice 2d z wartoscia kol
         }
         count.push(counter);
     }
-    
+
     for(let i= 0; i<unique.length; i++){ //umieszczenie wartosci z kolumny i ilosc jej powtorzen w tabeli by umiescic je w glownej tabeli dwuwymiarowej
         temp = [unique[i], count[i]];
         results.push(temp);
@@ -66,7 +66,10 @@ var sportOptions = { //opcje wykresu
     title:"Most popular sports in data", 
     width: '90%',
     height: 600,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'rgb(40, 40, 40)',
+    titleTextStyle: {color: 'rgb(255,255,255)'},
+    legendTextStyle: {color: 'rgb(255,255,255)'},
+    hAxis: {color: 'rgb(255,255,255)'},
     pieHole: 0.4, //tworzy wykres typu donut
     legend:'left' // tworzy legende po lewej stronie
 };
@@ -75,8 +78,13 @@ var countryOptions = {
     title:"Most common countries in data",
     width: '90%',
     height:600,
-    backgroundColor: '#f0f0f0',
-    vAxis: {minValue: 0, maxValue: 100}, //min i max wartosc wykresu
+    backgroundColor: 'rgb(40, 40, 40)',
+    titleTextStyle: {color: 'rgb(255,255,255)'},
+    hAxis: {
+        textStyle:{color: 'rgb(255,255,255)'}
+    },
+    vAxis: {color: 'rgb(255,255,255)', textStyle:{color: 'rgb(255,255,255)'} ,minValue: 0, maxValue: 100}, //min i max wartosc wykresu
+    colors: ['rgb(255,255,255)'],
     legend: {position: 'none'}, //brak legendy
     explorer: { //przyblizanie wykresu
         maxZoomOut:1,
@@ -98,7 +106,7 @@ request.onload = function() {    //funkcja uruchamiana po wykonaniu requestu get
     ColumnChart("country", graphElement(myData, "country"), 'country', countryOptions);   
 };
 request.send();
-      
+
 function PieChart(element, input, column, option) { //element = kolumna z ktorej pobieramy dane do wykresu, input = dane do wykresu, 
     var data = new google.visualization.DataTable();    //column = nazwa kolumny na wykresie, option - opcje wykresu
     data.addColumn('string', column);
