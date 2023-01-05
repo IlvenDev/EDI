@@ -1,8 +1,6 @@
 body {
-	background: linear-gradient(-45deg, #242424, #3d3d3d, #616161, #737373);
-	background-size: 400% 400%;
-	animation: gradient 8s ease infinite; /* Uruchamia animacje gradient, trwanie 8s, metoda ease in, czas trwania nieskończony */
-	height: 100%;
+	background-color: #C0C0C0;
+    height: 100%;
     padding: 0;
     margin: 0;
 }
@@ -19,9 +17,15 @@ body {
 	}
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat-VariableFont_wght.ttf);
+  }
+
 #maintext {
     margin: 0 auto;
-    transform: translate(0,-100px);
+    transform: translate(0,20px);
+    width: 70%;
 }
 
 
@@ -31,7 +35,7 @@ table {
     padding:5px;
     margin-left: auto;
     margin-right: auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat";
     width: 70%;
 }
 th {
@@ -50,17 +54,15 @@ td {
 }
 
 .header {
-    background-color: rgba(231, 231, 231, 0.58);
-    height: 120px;
+    background: transparent linear-gradient(90deg, #01A5BE 0%, #560C72 100%) 0% 0% no-repeat padding-box;
+    background-size: 400% 400%;
+	animation: gradient 8s ease infinite; /* Uruchamia animacje gradient, trwanie 8s, metoda ease in, czas trwania nieskończony */
+	height: 120px;
     width: 100%;
 }
 
 .cln {
     transform: translate(0,-140px);
-}
-
-.clnS {
-    transform: translate(0,-60px);
 }
 
 .clnSB {
@@ -77,7 +79,7 @@ h1 {
     text-align: center;
     color: aliceblue;
     font-size: 60px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Montserrat";
 }
 
 p {
@@ -85,34 +87,76 @@ p {
     margin-left: 10px;
     font-size: 25px;
     line-height: 1.5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat";
 }
 
+.buttons a {
+    background-color: #F0F0F0;
+    border: 1px solid #242424;
+    color: #242424;
+    padding: 10px 0px;
+    cursor: pointer;
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    font-size: 50px;
+    font-family: "Montserrat";
+}
+
+.buttons a:not(:last-child) {
+    border-right: none;
+}
+
+.buttons:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.buttons a:hover {
+    background: transparent linear-gradient(90deg, #01A5BE 0%, #560C72 100%) 0% 0% no-repeat padding-box;
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+    color: aliceblue;
+}
+
+a:link {
+    text-decoration: none;
+    text-align: center;
+}
+
+ /* Dropdown Button */
 .dropbtn {
-    background-color: #242424;
-    color: #F0F0F0;
+
+    background-color: transparent;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     height: 120px;
-}
+    width: 120px;
+    background-image: url(down-arrow.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
     
     /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
-
 }
+    
     
     /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    width: 100%;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    overflow: auto;
+    font-family: "Montserrat";
 }
     
     /* Links inside the dropdown */
@@ -121,6 +165,7 @@ p {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family: "Montserrat";
 }
     
     /* Change color of dropdown links on hover */
@@ -128,5 +173,40 @@ p {
     
     /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
-    
-    /* Change the background color of the dropdown button when the dropdown content is shown */
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    object-position: center;
+    width: 500px;
+    height: 500px;
+  }
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    margin: 0 auto;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+@keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
