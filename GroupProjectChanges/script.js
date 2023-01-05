@@ -66,7 +66,7 @@ var sportOptions = { //opcje wykresu
     title:"Most popular sports in data", 
     width: '90%',
     height: 600,
-    backgroundColor: '#C0C0C0',
+    backgroundColor: '#F0F0F0',
     titleTextStyle: {color: '#242424'},
     legendTextStyle: {color: '#242424'},
     hAxis: {color: '#242424'},
@@ -78,7 +78,7 @@ var countryOptions = {
     title:"Most common countries in data",
     width: '90%',
     height:600,
-    backgroundColor: '#C0C0C0',
+    backgroundColor: '#F0F0F0',
     titleTextStyle: {color: '#242424'},
     hAxis: {
         textStyle:{color: '#242424'}
