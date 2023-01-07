@@ -66,10 +66,10 @@ var sportOptions = { //opcje wykresu
     title:"Most popular sports in data", 
     width: '90%',
     height: 600,
-    backgroundColor: 'rgb(40, 40, 40)',
-    titleTextStyle: {color: 'rgb(255,255,255)'},
-    legendTextStyle: {color: 'rgb(255,255,255)'},
-    hAxis: {color: 'rgb(255,255,255)'},
+    backgroundColor: '#F0F0F0',
+    titleTextStyle: {color: '#242424'},
+    legendTextStyle: {color: '#242424'},
+    hAxis: {color: '#242424'},
     pieHole: 0.4, //tworzy wykres typu donut
     legend:'left' // tworzy legende po lewej stronie
 };
@@ -78,13 +78,13 @@ var countryOptions = {
     title:"Most common countries in data",
     width: '90%',
     height:600,
-    backgroundColor: 'rgb(40, 40, 40)',
-    titleTextStyle: {color: 'rgb(255,255,255)'},
+    backgroundColor: '#F0F0F0',
+    titleTextStyle: {color: '#242424'},
     hAxis: {
-        textStyle:{color: 'rgb(255,255,255)'}
+        textStyle:{color: '#242424'}
     },
-    vAxis: {color: 'rgb(255,255,255)', textStyle:{color: 'rgb(255,255,255)'} ,minValue: 0, maxValue: 100}, //min i max wartosc wykresu
-    colors: ['rgb(255,255,255)'],
+    vAxis: {color: '#242424', textStyle:{color: '#242424'} ,minValue: 0, maxValue: 100}, //min i max wartosc wykresu
+    colors: ['#242424'],
     legend: {position: 'none'}, //brak legendy
     explorer: { //przyblizanie wykresu
         maxZoomOut:1,
