@@ -61,8 +61,8 @@ td {
 .header {
     background: transparent linear-gradient(90deg, #01A5BE 0%, #560C72 100%) 0% 0% no-repeat padding-box;
     background-size: 400% 400%;
-	animation: gradient 8s ease infinite; /* Uruchamia animacje gradient, trwanie 8s, metoda ease in, czas trwania nieskończony */
-	height: 120px;
+    animation: gradient 8s ease infinite; /* Uruchamia animacje gradient, trwanie 8s, metoda ease in, czas trwania nieskończony */
+    height: 120px;
     width: 100%;
 }
 
