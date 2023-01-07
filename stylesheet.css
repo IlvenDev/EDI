@@ -44,9 +44,9 @@ th {
     background:#F0F0F0;
 }
 td {
-    border:1px solid #C0C0C0;
+    border:1px solid #0b0a0a;
     padding:5px;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 
 #country {
@@ -54,6 +54,11 @@ td {
 }
 
 #header {
+    height: 120px;
+    width: 100%;
+}
+
+.header {
     background: transparent linear-gradient(90deg, #01A5BE 0%, #560C72 100%) 0% 0% no-repeat padding-box;
     background-size: 400% 400%;
 	animation: gradient 8s ease infinite; /* Uruchamia animacje gradient, trwanie 8s, metoda ease in, czas trwania nieskończony */
