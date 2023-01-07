@@ -95,7 +95,7 @@ var countryOptions = {
 google.charts.load('current', {'packages':['corechart']}); //wczytuje framework charts
 var myData = 0;
 var request = new XMLHttpRequest(); 
-request.open("GET", "https://my.api.mockaroo.com/schema.json?key=e46f5320", true); 
+request.open("GET", "https://my.api.mockaroo.com/schema1.json?key=c331c250", true); 
 request.onload = function() {    //funkcja uruchamiana po wykonaniu requestu get
     myData = JSON.parse(request.responseText);   //wczytanie danych z JSON do zmiennej
     let loading = document.getElementById("loading");
