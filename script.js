@@ -25,12 +25,12 @@ function heading(data){
     }
 }
 
-function onlyUnique(value, index, self){    //funkcja zwracajaca nowe tabele w ktorej sa tylko wartosci unikalne z tabeli zrodlowej
+function onlyUnique(value, index, self){   //funkcja zwracajaca nowe tabele w ktorej sa tylko wartosci unikalne z tabeli zrodlowej
     return self.indexOf(value) === index;
 }
 
 
-function graphElement(data, element){//funkcja zwraca tablice 2d z wartoscia kolumny i iloscia jej wystepowan
+function graphElement(data, element){ //funkcja zwraca tablice 2d z wartoscia kolumny i iloscia jej wystepowan
     var results = [];    //element - kolumna z ktorej bedziemy pobierac dane
     var elements = [];
 
