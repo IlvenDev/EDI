@@ -92,21 +92,22 @@ var countryOptions = {
     }   
 };
 
-google.charts.load('current', {'packages':['corechart']}); //wczytuje framework charts
-var myData = 0;
-var request = new XMLHttpRequest(); 
-request.open("GET", "https://my.api.mockaroo.com/schema1.json?key=c331c250", true); 
-request.onload = function() {    //funkcja uruchamiana po wykonaniu requestu get
-    myData = JSON.parse(request.responseText);   //wczytanie danych z JSON do zmiennej
-    let loading = document.getElementById("loading");
-    loading.parentNode.removeChild(loading);  //usuniecie placeholdera
-    heading(myData); //utworzenie kolumn
-    createTable(myData); //utworzenie tabeli z danych
-    PieChart("sport", graphElement(myData, "type of sport"), 'sport', sportOptions);        
-    ColumnChart("country", graphElement(myData, "country"), 'country', countryOptions);   
-};
-request.send();
-
+function main(data){
+    google.charts.load('current', {'packages':['corechart']}); //wczytuje framework charts
+    var myData = 0;
+    var request = new XMLHttpRequest(); 
+    request.open("GET", data, true); 
+    request.onload = function() {    //funkcja uruchamiana po wykonaniu requestu get
+        myData = JSON.parse(request.responseText);   //wczytanie danych z JSON do zmiennej
+        let table = document.getElementById("tab");
+        table.innerHTML = '<table id="tab"><tr id="header"> </tr></table>';
+        heading(myData); //utworzenie kolumn
+        createTable(myData); //utworzenie tabeli z danych
+        PieChart("sport", graphElement(myData, "type of sport"), 'sport', sportOptions);        
+        ColumnChart("country", graphElement(myData, "country"), 'country', countryOptions);   
+    };
+    request.send();
+}
 function PieChart(element, input, column, option) { //element = kolumna z ktorej pobieramy dane do wykresu, input = dane do wykresu, 
     var data = new google.visualization.DataTable();    //column = nazwa kolumny na wykresie, option - opcje wykresu
     data.addColumn('string', column);
